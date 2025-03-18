@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quote Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AI Quote Generator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>AI Quote Generator</h1>
+
+        <!-- Input Fields -->
+        <input type="text" id="type" placeholder="Type of quote (e.g. Motivational, Funny)">
+        <input type="text" id="tone" placeholder="Tone (e.g. Serious, Playful)">
         
-        <label for="type">Type of Quote (e.g., life, love, success):</label>
-        <input type="text" id="type" placeholder="Enter quote type">
-
-        <label for="tone">Tone (e.g., funny, serious, deep):</label>
-        <input type="text" id="tone" placeholder="Enter tone">
-
-        <button onclick="generateQuote()">Generate Quote</button>
-
-        <p id="quote">Your quote will appear here...</p>
+        <!-- Button to Generate Quote -->
+        <button onclick="generateQuote()">Generate AI Quote</button>
+        
+        <!-- Display Quote -->
+        <p id="quote">Click the button to get an AI-generated quote.</p>
     </div>
 
     <script src="script.js"></script>
