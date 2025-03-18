@@ -1,4 +1,4 @@
-const API_KEY = "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"; // ⚠️ Store this securely!
+const API_KEY = "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"; 
 
 async function generateQuote() {
     const prompt = "Generate a motivational quote.";
@@ -6,7 +6,7 @@ async function generateQuote() {
     document.getElementById("quote").innerText = "Generating...";
 
     try {
-        const response = await fetch("https://api-inference.huggingface.co/models/meta-llama/Llama-2-7b-chat-hf", {
+        const response = await fetch("https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill", { 
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${API_KEY}`,
@@ -20,17 +20,9 @@ async function generateQuote() {
         }
 
         const data = await response.json();
-
-        if (data && data.generated_text) {
-            document.getElementById("quote").innerText = `"${data.generated_text}"`;
-        } else if (Array.isArray(data) && data.length > 0 && data[0].generated_text) {
-            document.getElementById("quote").innerText = `"${data[0].generated_text}"`;
-        } else {
-            document.getElementById("quote").innerText = "No quote generated.";
-        }
+        document.getElementById("quote").innerText = data.generated_text || "No quote generated.";
     } catch (error) {
         console.error("Error:", error);
         document.getElementById("quote").innerText = "Error generating quote.";
     }
 }
-
