@@ -1,4 +1,4 @@
-const API_KEY = "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"; // ⚠️ Store this securely!
+const API_KEY = "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"; // ⚠️ Store this securely!
 
 async function generateQuote() {
     const prompt = "Generate a motivational quote.";
