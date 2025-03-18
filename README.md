@@ -1,3 +1,4 @@
+
 # Quote Generator
 
 A simple quote generator website that provides different types of quotes based on user selection. Built using HTML, CSS, and JavaScript.
@@ -18,7 +19,8 @@ A simple quote generator website that provides different types of quotes based o
 ```
 
 ## 🌐 Live Demo
-[Click here to view the website](https://your-username.github.io/quote-generator/)
+[[Click here to view the website](https://your-username.github.io/quote-generator/)](https://EnZyiety.github.io/quote-generator/
+)
 
 ## 🛠 How to Run Locally
 1. Clone the repository:
