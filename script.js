@@ -1,4 +1,4 @@
-const API_KEY = "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"; // ⚠️ Replace with your actual API key
+const API_KEY = "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"; // ⚠️ Store this securely!
 
 async function generateQuote() {
     const prompt = "Generate a motivational quote.";
@@ -15,9 +15,15 @@ async function generateQuote() {
             body: JSON.stringify({ inputs: prompt })
         });
 
+        if (!response.ok) {
+            throw new Error(`API error: ${response.status} ${response.statusText}`);
+        }
+
         const data = await response.json();
 
-        if (data && data.length > 0) {
+        if (data && data.generated_text) {
+            document.getElementById("quote").innerText = `"${data.generated_text}"`;
+        } else if (Array.isArray(data) && data.length > 0 && data[0].generated_text) {
             document.getElementById("quote").innerText = `"${data[0].generated_text}"`;
         } else {
             document.getElementById("quote").innerText = "No quote generated.";
@@ -27,3 +33,4 @@ async function generateQuote() {
         document.getElementById("quote").innerText = "Error generating quote.";
     }
 }
+
