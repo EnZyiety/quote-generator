@@ -9,7 +9,7 @@ async function generateQuote() {
         const response = await fetch("https://api-inference.huggingface.co/models/meta-llama/Llama-2-7b-chat-hf", {
             method: "POST",
             headers: {
-                "Authorization": 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, // Uses .env variable
+                "Authorization": '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', // Uses .env variable
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ inputs: prompt })
